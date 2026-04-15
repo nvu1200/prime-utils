@@ -14,4 +14,11 @@ class PrimeCheckerTest {
         // Bao phủ dòng return true cuối cùng
         assertTrue(checker.isPrime(7));
     }
+    @Test
+    void testPathCoverage() {
+        PrimeChecker checker = new PrimeChecker();
+        assertTrue(checker.isPrime(2));  // Đường đi: vòng lặp không chạy (n=2)
+        assertFalse(checker.isPrime(-5)); // Đường đi: số âm
+        assertTrue(checker.isPrime(3));  // Đường đi: vòng lặp chạy 1 lần
+    }
 }
